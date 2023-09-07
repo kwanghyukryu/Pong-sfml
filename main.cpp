@@ -11,7 +11,7 @@ int main() {
     sf::RenderWindow window(VM,"pong");
     sf::Clock clock;
     ball myball(1000/2,0);
-    Paddle myPaddle(1000/2,710);
+    Paddle myPaddle(450,710);
 
     sf::Font font;
     font.loadFromFile("Roboto-Regular.ttf");
@@ -25,7 +25,7 @@ int main() {
 
     sf::Text fontDead;
     fontDead.setFont(font);
-    fontDead.setPosition(300,720/2);
+    fontDead.setPosition(280,720/2);
     fontDead.setCharacterSize(40);
     fontDead.setOutlineThickness(1);
     fontDead.setOutlineColor(sf::Color::Red);
