@@ -25,15 +25,11 @@ int main() {
 
     sf::Text fontDead;
     fontDead.setFont(font);
-    fontDead.setPosition(1000/2,720/2);
-    fontDead.setCharacterSize(100);
+    fontDead.setPosition(300,720/2);
+    fontDead.setCharacterSize(40);
     fontDead.setOutlineThickness(1);
     fontDead.setOutlineColor(sf::Color::Red);
     fontDead.setFillColor(sf::Color::Red);
-
-    std::stringstream aa;
-    aa << "press esc to exit the game";
-    fontDead.setString(aa.str());
 
     int lives = 3;
     std::stringstream ss;
@@ -98,11 +94,16 @@ int main() {
             ss.str("");
             ss << "Lives:" << lives;
             fontHUD.setString(ss.str());
+            
 
         }
 
-        if (lives < 0){
-            window.close();
+        if (lives == 0){
+            std::stringstream aa;
+            aa << "press esc to exit the game";
+            fontDead.setString(aa.str());
+            myball.m_speed = 0;
+
         }
 
         
