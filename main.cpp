@@ -28,14 +28,26 @@ int main() {
     fontDead.setPosition(280,720/2);
     fontDead.setCharacterSize(40);
     fontDead.setOutlineThickness(1);
-    fontDead.setOutlineColor(sf::Color::Red);
+    fontDead.setOutlineColor(sf::Color::White);
     fontDead.setFillColor(sf::Color::Red);
+
+    sf::Text fontPoint;
+    fontPoint.setFont(font);
+    fontPoint.setPosition(870,0);
+    fontPoint.setCharacterSize(30);
+    fontPoint.setOutlineThickness(1);
+    fontPoint.setOutlineColor(sf::Color::White);
+    fontPoint.setFillColor(sf::Color::Blue);
 
     int lives = 3;
     std::stringstream ss;
     ss << "Lives:" << lives;
     fontHUD.setString(ss.str());
 
+    int point = 0;
+    std::stringstream pp;
+    pp << "points:" << point;
+    fontPoint.setString(pp.str());
 
     sf::Time dt;
     sf::Event event;
@@ -51,6 +63,10 @@ int main() {
                 myball.hitBall();
                 bounceTimer = 0.10f;
                 myball.m_speed += 5;
+                point++;
+                pp.str("");
+                pp << "Point:" << point;
+                fontPoint.setString(pp.str());
             }
         }
 
@@ -117,6 +133,7 @@ int main() {
         window.draw(myPaddle.getShape());
         window.draw(fontHUD);
         window.draw(fontDead);
+        window.draw(fontPoint);
         window.display();
 
     }
