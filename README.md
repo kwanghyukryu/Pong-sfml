@@ -1,4 +1,4 @@
-#PONG
+PONG
 
 I have created the game pong using the c++ library SFML
 
