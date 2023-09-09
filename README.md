@@ -1,5 +1,4 @@
-PONG
-
+### PONG
 I have created the game pong using the c++ library SFML
 
 using the sfml library, I have created the ball which will bounce off of any surface it hits as well as a paddle that can be controlled by the players with the keys "A" and "D"
