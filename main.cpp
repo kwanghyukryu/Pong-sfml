@@ -25,8 +25,8 @@ int main() {
 
     sf::Text fontDead;
     fontDead.setFont(font);
-    fontDead.setPosition(280,720/2);
-    fontDead.setCharacterSize(40);
+    fontDead.setPosition(50,720/2);
+    fontDead.setCharacterSize(35);
     fontDead.setOutlineThickness(1);
     fontDead.setOutlineColor(sf::Color::White);
     fontDead.setFillColor(sf::Color::Red);
@@ -116,7 +116,7 @@ int main() {
 
         if (lives == 0){
             std::stringstream aa;
-            aa << "press esc to exit the game";
+            aa << "You Scored a total of " << point << " points," " Press esc to exit the game";
             fontDead.setString(aa.str());
             myball.m_speed = 0;
 
